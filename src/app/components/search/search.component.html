@@ -1,0 +1,36 @@
+<div class="search-container">
+    <form [formGroup] ="searchForm">
+        <input formControlName="place" type="text" placeholder="Buscar ubicación..." id="search-box" #searchBox>
+    </form>
+    <div *ngIf="showResult" id="search-results" #searchResults></div>
+
+</div>
+
+<!--Contenedor del mapa -->
+<div id="map-container" #mapContainer></div>
+
+<!--Información del lugar seleccionado -->
+<div class="place-info">
+    <h3 id="place-name">Selecciona un lugar</h3>
+    <p id="place-category">Categoría: ---</p>
+    <button
+  id="save-button"
+  class="save-button"
+  [ngClass]="buttonState"
+  (click)="saveToFavorites()"
+  *ngIf="selectedPlace"
+>
+  {{ buttonText }}
+</button>
+
+  
+  
+</div>
+
+<!-- Toast de confirmación -->
+<div class="toast" *ngIf="showToast">
+    ✅ Lugar añadido a favoritos
+</div>
+  
+
+

@@ -1,0 +1,101 @@
+.favorites-container {
+    max-width: 700px;
+    margin: auto;
+    padding: 30px 20px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    animation: fadeInCard 0.8s ease-in-out both;
+}
+
+/* 💫 Animación guapa */
+@keyframes fadeInCard {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #f1f7fd;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-5px);
+}
+
+li strong {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* 🎯 CENTRAR BOTONES */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.go-button,
+.remove-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.go-button {
+    background: #3498db;
+    color: white;
+}
+
+.remove-button {
+    background: #e74c3c;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.note-section {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.note-section textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    min-height: 70px;
+    resize: vertical;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.note-section textarea:focus {
+    outline: none;
+    box-shadow: 0 0 6px rgba(52, 152, 219, 0.4);
+}

@@ -1,0 +1,187 @@
+/* 🔍 Contenedor del buscador */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* 🔵 Estilo del campo de búsqueda */
+#search-box {
+    width: 90%;
+    max-width: 500px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease-in-out;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(45deg, #007bff, #28a745);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔥 Efecto al hacer foco en el campo de búsqueda */
+#search-box:focus {
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(45deg, #28a745, #007bff);
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* 🗺 Contenedor del mapa */
+#map-container {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* 📜 Lista de resultados */
+#search-results {
+    list-style: none;
+    padding: 10px;
+    max-width: 500px;
+    width: 90%;
+    margin-top: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 🏷 Resultados individuales */
+.search-result {
+    padding: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s ease-in-out;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-result:hover {
+    background: #f0f0f0;
+    transform: scale(1.02);
+}
+
+/* 📍 Información del lugar seleccionado */
+.place-info {
+    width: 90%;
+    max-width: 700px;
+    margin: 15px auto;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* 📌 Estilo del botón "Guardar a Favoritos" */
+#save-button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    margin-left: 233px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#save-button:hover {
+    background: #e68900;
+    transform: scale(1.05);
+}
+
+/* 🔹 Asegura que el mapa y su información estén alineados */
+.map-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 📱 Diseño responsivo */
+@media (max-width: 768px) {
+    #search-box {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    #search-results {
+        max-width: 90%;
+    }
+
+    .search-result {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .place-info {
+        max-width: 90%;
+    }
+
+    #map-container {
+        height: 350px;
+    }
+}
+
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 30px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    animation: slideUpFade 0.4s ease-out;
+    z-index: 9999;
+  }
+  
+  @keyframes slideUpFade {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  
+  /* Estados del botón dinámico */
+  #save-button.success {
+    background-color: #28a745;
+    color: white;
+    transform: scale(1.03);
+  }
+  
+  #save-button.error {
+    background-color: #6c757d;
+    color: white;
+    transform: scale(1.03);
+  }
+  
+  #save-button.default {
+    background-color: #ff9800;
+    color: white;
+  }
+  
+  

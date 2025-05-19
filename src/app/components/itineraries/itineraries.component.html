@@ -1,0 +1,31 @@
+<h2>🗺️ Planificar Itinerario</h2>
+
+<form class="itinerary-form" (submit)="calculateRoute($event)">
+  <div class="form-row">
+    <div class="input-group">
+      <label for="start">Origen:</label>
+      <input id="start" type="text" [(ngModel)]="startLocation" name="startLocation" placeholder="Ej: Madrid" required>
+    </div>
+
+    <div class="input-group">
+      <label for="end">Destino:</label>
+      <input id="end" type="text" [(ngModel)]="endLocation" name="endLocation" placeholder="Ej: Barcelona" required>
+    </div>
+
+    <button type="submit" class="route-button">🚦 Calcular Ruta</button>
+  </div>
+</form>
+
+<br>
+<div #routeMap class="routeMap"></div>
+<div class="ruta-info" *ngIf="distanciaKm && duracionMin">
+  🚩 <strong>Distancia:</strong> {{ distanciaKm }} km<br>
+  ⏱️ <strong>Duración:</strong> {{ duracionMin }} min
+</div>
+
+<button (click)="saveItinerary()" *ngIf="distanciaKm && duracionMin" class="save-itinerary">
+  💾 Guardar Itinerario
+</button>
+
+
+

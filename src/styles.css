@@ -1,1 +1,136 @@
-/* You can add global styles to this file, and also import other style files */
+/*ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #f5f0e4;
+    color: #333;
+    text-align: center;
+  }
+  
+  /*CABECERA */
+  header {
+    background: linear-gradient(135deg, #007BFF, #6610F2);
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  nav {
+    margin-top: 10px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  /*CONTENEDOR PRINCIPAL */
+  main {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #4a99ed, #8f53f1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 📍 ESTILOS PARA EL MAPA */
+  #map {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ❤️ ESTILOS PARA FAVORITOS */
+  .favorites-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .favorites-list li {
+    background: #e9ecef;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+  }
+  
+  .favorites-list li:hover {
+    background: #dee2e6;
+  }
+  
+  /* 🔍 ESTILOS PARA BUSCADOR */
+  .search-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .search-box input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search-box button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    margin-left: 10px;
+    border: none;
+    background: linear-gradient(135deg, #007BFF, #6610F2);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .search-box button:hover {
+    background: #0056b3;
+  }
+  
+  /* 📱 RESPONSIVE */
+  @media (max-width: 768px) {
+    nav {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    nav a {
+      margin-bottom: 10px;
+    }
+  
+    .search-box {
+      flex-direction: column;
+    }
+  
+    .search-box input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  

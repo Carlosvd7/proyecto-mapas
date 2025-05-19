@@ -1,0 +1,28 @@
+<div class="favorites-container">
+    <h2>📌 Tus Lugares Favoritos</h2>
+    <p>Aquí puedes ver los lugares guardados y gestionarlos.</p>
+
+    <ul *ngIf="favorites.length > 0; else noFavorites">
+        <li *ngFor="let place of favorites; let i = index">
+            <strong>{{ place.name }}</strong> ({{ place.type }}) 
+            <br>📍Coordenadas: {{ place.coords[1]}}, {{ place.coords[0] }}
+
+            <div class="buttons">
+                <button class="go-button" (click)="goToLocation(place)">🔍 Ver en el mapa</button>
+                <button class="remove-button" (click)="removeFavorite(i)">🗑 Eliminar</button>
+            </div>
+            <div class="note-section">
+                <textarea
+                  [(ngModel)]="place.note"
+                  (blur)="updateNote(i, place.note)"
+                  placeholder="📝 Escribe una nota sobre este lugar..."
+                ></textarea>
+              </div>
+              
+        </li>
+    </ul>
+
+    <ng-template #noFavorites>
+        <p>No tienes lugares guardados aún. Agrega algunos desde la búsqueda. ⭐</p>
+    </ng-template>
+</div>

@@ -1,0 +1,25 @@
+.mapContainer {
+    width: 100%;
+    height: 500px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2{
+
+    color: white;
+    margin-top: 10px;
+   margin-bottom: 15px;
+  }   
+  
+  /* 📱 Corregir en dispositivos móviles */
+  @media (max-width: 768px) {
+    #map {
+      height: 400px; /* Reduce el tamaño en pantallas pequeñas */
+      width: 90%;
+    }
+  }
+  
